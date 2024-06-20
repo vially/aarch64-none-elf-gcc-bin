@@ -1,12 +1,21 @@
 pkgbase = aarch64-none-elf-gcc-bin
 	pkgdesc = The GNU Compiler Collection - cross compiler for ARM64 target
-	pkgver = 12.2.rel1
+	pkgver = 13.2.rel1
 	pkgrel = 1
 	url = https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
 	arch = x86_64
 	license = GPL
 	license = LGPL
-	source = https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/binrel/arm-gnu-toolchain-12.2.rel1-x86_64-aarch64-none-elf.tar.xz
-	sha256sums = 62d66e0ad7bd7f2a183d236ee301a5c73c737c886c7944aa4f39415aab528daf
+	provides = aarch64-none-elf-gcc
+	provides = aarch64-none-elf-gcc-binutils
+	provides = aarch64-none-elf-gdb
+	conflicts = aarch64-none-elf-toolchain
+	conflicts = aarch64-none-elf-gcc
+	conflicts = aarch64-none-elf-gcc-binutils
+	conflicts = aarch64-none-elf-gdb
+	options = !strip
+	options = !debug
+	source = https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/arm-gnu-toolchain-13.2.rel1-x86_64-aarch64-none-elf.tar.xz
+	sha256sums = 7fe7b8548258f079d6ce9be9144d2a10bd2bf93b551dafbf20fe7f2e44e014b8
 
 pkgname = aarch64-none-elf-gcc-bin
