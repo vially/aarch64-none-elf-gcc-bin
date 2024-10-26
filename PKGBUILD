@@ -19,8 +19,9 @@ provides=(aarch64-none-elf-gcc aarch64-none-elf-gcc-binutils aarch64-none-elf-gd
 conflicts=(aarch64-none-elf-toolchain aarch64-none-elf-gcc aarch64-none-elf-gcc-binutils aarch64-none-elf-gdb)
 
 package() {
-  mkdir -p ${pkgdir}/usr
+  mkdir -p ${pkgdir}/usr/share/licenses/arm-gnu-toolchain
   cp -a ${srcdir}/arm-gnu-toolchain-${pkgver}-${CARCH}-${_target}/* ${pkgdir}/usr
+  mv ${pkgdir}/usr/license.txt ${pkgdir}/usr/share/licenses/arm-gnu-toolchain/
   rm -f ${pkgdir}/usr/*-manifest.txt ${pkgdir}/usr/lib/bfd-plugins/libdep.so
   rm -rf ${pkgdir}/usr/include ${pkgdir}/usr/share/{dejagnu,doc,gcc-*,gdb,info,locale} ${pkgdir}/usr/share/man/{man1/runtest.1,man5,man7}
 }
